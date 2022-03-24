@@ -9,6 +9,14 @@ class App extends Component {
       movies: []
     }
   }
+  render() {
+    return (
+      <main>
+        <TopMovies movies={this.state.movies}/>
+        <AllMovies movies={this.state.movies}/>
+      </main>
+    )
+  }
 
 }
 
