@@ -18,7 +18,7 @@ class App extends Component {
 
   render() {
     return (
-      <main>
+      <main className='App'>
         <AllMovies movies={this.state.movies}/>
       </main>
     )
