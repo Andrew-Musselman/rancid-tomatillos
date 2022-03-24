@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import movieData from './movie-data';
 import AllMovies from './AllMovies';
+import Nav from './Nav';
 
 
 class App extends Component {
@@ -18,9 +19,12 @@ class App extends Component {
 
   render() {
     return (
-      <main className='App'>
-        <AllMovies movies={this.state.movies}/>
-      </main>
+      <div>
+        <Nav />
+        <main className='App'>
+          <AllMovies movies={this.state.movies}/>
+        </main>
+      </div>
     )
   }
 
