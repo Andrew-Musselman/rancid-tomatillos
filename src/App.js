@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import movieData from './movie-data';
 import AllMovies from './AllMovies';
+import TopMovies from './TopMovies'
 import Nav from './Nav';
 
 
@@ -22,6 +23,7 @@ class App extends Component {
       <div>
         <Nav />
         <main className='App'>
+          <TopMovies movies={this.state.movies}/>
           <AllMovies movies={this.state.movies}/>
         </main>
       </div>
