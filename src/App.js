@@ -2,19 +2,23 @@ import React, {Component} from 'react';
 import './App.css';
 import movieData from './movie-data';
 import AllMovies from './AllMovies';
-import TopMovies from './TopMovies';
+
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      movies: [movieData]
+      movies: []
     }
   }
+
+  componentDidMount() {
+    this.setState({movies: movieData.movies})
+  }
+
   render() {
     return (
       <main>
-        <TopMovies movies={this.state.movies}/>
         <AllMovies movies={this.state.movies}/>
       </main>
     )
