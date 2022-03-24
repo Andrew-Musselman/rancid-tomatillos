@@ -1,12 +1,14 @@
 import React, {Component} from 'react';
 import './App.css';
 import movieData from './movie-data';
+import AllMovies from './AllMovies';
+import TopMovies from './TopMovies';
 
 class App extends Component {
   constructor() {
     super()
     this.state = {
-      movies: []
+      movies: [movieData]
     }
   }
   render() {
