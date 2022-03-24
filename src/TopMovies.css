@@ -1,0 +1,24 @@
+.top-movie-container {
+  display: flex;
+  justify-content: center;
+  align-content: space-around;
+}
+
+.top-movie-container > .movie-card {
+  padding: 10px;
+}
+
+.top-movie-container > .movie-card > img {
+  height: 50vh;
+  width: 25vw;
+}
+
+.top-movie-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.top-movie-wrapper > h2 {
+  align-self: center;
+  color: rgb(64, 153, 153);
+}

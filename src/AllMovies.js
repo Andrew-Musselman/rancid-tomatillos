@@ -1,5 +1,6 @@
 import React from 'react';
 import MovieCard from './MovieCard';
+import './AllMovies.css'
 
 const AllMovies = ({movies}) => {
 
@@ -15,8 +16,11 @@ const AllMovies = ({movies}) => {
   })
 
   return (
-    <div className='all-movie-container'>
-      {movieCards}
+    <div className='all-movie-wrapper'>
+      <h2>All Movies</h2>
+      <div className='all-movie-container'>
+        {movieCards}
+      </div>
     </div>
   )
 }
