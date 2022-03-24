@@ -7,6 +7,9 @@ const AllMovies = ({movies}) => {
       <MovieCard
         image={movie.img}
         title={movie.title}
+        id={movie.id}
+        key={movie.id}
+        />
       )
   })
 
