@@ -4,6 +4,7 @@ import movieData from './movie-data';
 import AllMovies from './AllMovies';
 import TopMovies from './TopMovies'
 import Nav from './Nav';
+import CurrentMovie from './CurrentMovie';
 
 
 class App extends Component {
