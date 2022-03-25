@@ -2,13 +2,14 @@ import React from 'react'
 import MovieCard from './MovieCard'
 import './TopMovies.css'
 
-const TopMovies = ({movies}) => {
+const TopMovies = ({movies, getMovieDetails}) => {
   const topMovies = movies.filter(movie => movie.average_rating >= 7)
   const topMovieCards = topMovies.map(movie => {
     return (
       <MovieCard
       image={movie.poster_path}
       title={movie.title}
+      getMovieDetails={getMovieDetails}
       id={movie.id}
       key={movie.id}
       />
