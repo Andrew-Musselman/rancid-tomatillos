@@ -1,9 +1,9 @@
 import React from 'react';
 
-const CurrentMovie = ({currentMovie}) => {
+const CurrentMovie = ({currentMovie, hideMovieDetails}) => {
 
   return (
-    <div className='current-movie-details'>
+    <div className='current-movie-details' onClick={() => hideMovieDetails()}>
       <img src={currentMovie.backdrop_path} alt={`Still from ${currentMovie.title}`} />
       <h2>{currentMovie.title}</h2>
       <p>{`Released: ${new Date(currentMovie.release_date).toLocaleDateString({year: 'numeric', month: '2-digit', day: '2-digit'})} | Run Time: ${currentMovie.runtime} minutes`}</p>
