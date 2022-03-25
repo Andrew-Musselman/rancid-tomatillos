@@ -1,4 +1,5 @@
 import React from 'react';
+import './CurrentMovie.css';
 
 const CurrentMovie = ({currentMovie, hideMovieDetails}) => {
 
@@ -10,7 +11,7 @@ const CurrentMovie = ({currentMovie, hideMovieDetails}) => {
       <p>{currentMovie.tagline}</p>
       <p>{currentMovie.overview}</p>
       <p>{currentMovie.genre}</p>
-      <p>{`Average Rating: ${currentMovie.average_rating}`}</p>
+      <p>{`Average Rating: ${parseFloat(currentMovie.average_rating).toFixed(2)}`}</p>
       <p>{`Budget: ${currentMovie.budget} | Box Office: ${currentMovie.revenue}`}</p>
     </div>
   )
