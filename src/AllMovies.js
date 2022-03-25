@@ -2,13 +2,14 @@ import React from 'react';
 import MovieCard from './MovieCard';
 import './AllMovies.css'
 
-const AllMovies = ({movies}) => {
+const AllMovies = ({movies, getMovieDetails}) => {
 
   const movieCards = movies.map(movie => {
     return (
       <MovieCard
         image={movie.poster_path}
         title={movie.title}
+        getMovieDetails={getMovieDetails}
         id={movie.id}
         key={movie.id}
         />
