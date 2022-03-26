@@ -1,16 +1,16 @@
 const apiPath = 'https://rancid-tomatillos.herokuapp.com/api/v2'
 
-getAllMovies = () => {
-  fetch(`${apiPath}/movies`)
+const getAllMovies = () => {
+  return fetch(`${apiPath}/movies`)
   .then(response => handleResponse(response))
 }
 
-getSingleMovie = (movieID) => {
-  fetch(`${apiPath}/movies/:${movieID}`)
+const getSingleMovie = (movieID) => {
+  return fetch(`${apiPath}/movies/${movieID}`)
   .then(response => handleResponse(response))
 }
 
-handleResponse = (response) => {
+const handleResponse = (response) => {
   if(!response.ok) {
     throw new Error('Something went wrong!')
   } else {
