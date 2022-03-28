@@ -3,7 +3,7 @@ import MovieCard from '../MovieCard/MovieCard'
 import './TopMovies.css'
 
 const TopMovies = ({movies, getMovieDetails}) => {
-  const topMovies = movies.filter(movie => movie.average_rating >= 7)
+  const topMovies = movies.filter(movie => movie.average_rating >= 6.6)
   const topMovieCards = topMovies.map(movie => {
     return (
       <MovieCard
