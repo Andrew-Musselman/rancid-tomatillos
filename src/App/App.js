@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import './App.css';
-import AllMovies from './AllMovies';
-import TopMovies from './TopMovies'
-import Nav from './Nav';
-import CurrentMovie from './CurrentMovie';
+import AllMovies from '../AllMovies/AllMovies';
+import TopMovies from '../TopMovies/TopMovies'
+import Nav from '../Nav/Nav';
+import CurrentMovie from '../CurrentMovie/CurrentMovie';
 import {
   getAllMovies, 
   getSingleMovie 
-} from './apiCalls'
+} from '../apiCalls'
 
 
 class App extends Component {
