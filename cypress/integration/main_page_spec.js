@@ -16,3 +16,12 @@ describe('Main', () => {
       .get('div[class="movie-card"]');
   })
 });
+
+// describe('Movie Details', () => {
+//   it('As a user, I should be able to click on a movie card', () => {
+//     cy.visit('http://localhost:3000')
+//       .get('div[class="movie-card"]')
+//       .click({multiple: true})
+//
+//   })
+// })
