@@ -6,7 +6,21 @@
 }
 
 .movie-card > img {
-  height: 30vh;
-  width: 15vw;
+  height: 40vh;
+  width: 17vw;
+  box-shadow: 10px 14px 14px rgba(46, 32, 32, 0.1);
+  cursor: pointer;
+  border-radius: 3px;
 
+}
+
+.movie-card > img:hover {
+  transition: 0.3s;
+  transform: scale(1.04);
+}
+
+.movie-card > p {
+  color: rgb(64, 153, 153);
+  font-weight:bold;
+  padding-top: 1.3vh;
 }
