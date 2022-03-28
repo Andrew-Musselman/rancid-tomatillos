@@ -9,8 +9,9 @@
 }
 
 .top-movie-container > .movie-card > img {
-  height: 50vh;
-  width: 25vw;
+  height: 58vh;
+  width: 21vw;
+  box-shadow: 10px 14px 14px rgba(46, 32, 32, 0.1);
 }
 
 .top-movie-wrapper {
@@ -21,4 +22,7 @@
 .top-movie-wrapper > h2 {
   align-self: center;
   color: rgb(64, 153, 153);
+  text-shadow: 2px 6px 6px hsl(0deg 0% 0% / 0.1);
+  padding-top: 3vh;
+  padding-bottom: 3vh;
 }
