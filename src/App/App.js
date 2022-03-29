@@ -4,9 +4,10 @@ import AllMovies from '../AllMovies/AllMovies';
 import TopMovies from '../TopMovies/TopMovies'
 import Nav from '../Nav/Nav';
 import CurrentMovie from '../CurrentMovie/CurrentMovie';
+import { Route, NavLink } from 'react-router-dom';
 import {
-  getAllMovies, 
-  getSingleMovie 
+  getAllMovies,
+  getSingleMovie
 } from '../apiCalls'
 
 
@@ -21,7 +22,6 @@ class App extends Component {
   }
 
   componentDidMount() {
-    
     getAllMovies()
     .then(data => this.setState({movies: data.movies}))
     .catch(error => this.setState({error: error}))
@@ -45,13 +45,20 @@ class App extends Component {
         <Nav />
         {this.state.error && <h2>{this.state.error.message}</h2>}
         </div>
+
         <main className='App'>
-          { this.state.currentMovie && <CurrentMovie currentMovie={this.state.currentMovie} hideMovieDetails={this.hideMovieDetails}/> }
-          {!this.state.currentMovie &&
-          <div>
-            <TopMovies movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>
-            <AllMovies movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>
-          </div> }
+        <Route exact path='/' render={() => {
+          return (
+            <div>
+              <TopMovies movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>
+              <AllMovies movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>
+            </div>
+        )}}/>
+        <Route exact path='/:movieId' render={({match}) => {
+          let id= parseInt(match.params.movieId)
+          this.getMovieDetails(id)
+          return <CurrentMovie currentMovie={this.state.currentMovie} hideMovieDetails={this.hideMovieDetails}/>
+        }}/>
         </main>
       </div>
     )
