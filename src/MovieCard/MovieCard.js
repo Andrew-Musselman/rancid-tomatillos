@@ -4,14 +4,11 @@ import { Link } from 'react-router-dom';
 
 const MovieCard = ({image, title, id, getMovieDetails}) =>{
   return (
-
+    <div className='movie-card'>
       <Link to={`/${id}`} >
-      <div className='movie-card'>
-        <img src={image} alt={`${title}'s poster`} />
-        <p>{title}</p>
-        </div>
-        </Link>
-
+        <img src={image} alt={`${title}'s poster`} className='movie-card-img'/>
+      </Link>
+    </div>
   )
 }
 
