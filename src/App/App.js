@@ -27,17 +27,6 @@ class App extends Component {
     .catch(error => this.setState({error: error}))
   }
 
-  getMovieDetails = (id) => {
-    const currentMovie = this.state.movies.find(movie => movie.id === id)
-    getSingleMovie(currentMovie.id)
-    .then(data => this.setState({currentMovie: data.movie}))
-    .catch(error => this.setState({error: error}))
-  }
-
-  hideMovieDetails = () => {
-    this.setState({currentMovie: ''})
-  }
-
   render() {
     return (
       <div>
@@ -50,14 +39,13 @@ class App extends Component {
         <Route exact path='/' render={() => {
           return (
             <div>
-              <TopMovies movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>
-              <AllMovies movies={this.state.movies} getMovieDetails={this.getMovieDetails}/>
+              <TopMovies movies={this.state.movies} />
+              <AllMovies movies={this.state.movies} />
             </div>
         )}}/>
         <Route exact path='/:movieId' render={({match}) => {
           let id= parseInt(match.params.movieId)
-          this.getMovieDetails(id)
-          return <CurrentMovie currentMovie={this.state.currentMovie} hideMovieDetails={this.hideMovieDetails}/>
+          return <CurrentMovie currentMovieId={id} />
         }}/>
         </main>
       </div>
