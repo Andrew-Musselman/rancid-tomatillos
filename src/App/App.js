@@ -4,7 +4,7 @@ import AllMovies from '../AllMovies/AllMovies';
 import TopMovies from '../TopMovies/TopMovies'
 import Nav from '../Nav/Nav';
 import CurrentMovie from '../CurrentMovie/CurrentMovie';
-import { Route, NavLink } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import {
   getAllMovies,
   getSingleMovie
