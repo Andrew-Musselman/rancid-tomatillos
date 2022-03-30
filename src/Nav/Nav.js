@@ -1,13 +1,15 @@
 import React from 'react'
 import './Nav.css'
-import reel from '../reel.png'
-import reel2 from '../reel2.png'
+import reel from '../reel2.png'
+import { NavLink } from 'react-router-dom'
 
 const Nav = () => {
   return (
     <nav>
-      <img src={reel2}/>
-      <h1>Rancid Tomatillos</h1>
+      <img src={reel}/>
+      <NavLink to='/'>
+        <h1>Rancid Tomatillos</h1>
+      </NavLink>
     </nav>
   )
 }

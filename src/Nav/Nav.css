@@ -2,7 +2,7 @@
 
 nav {
   background-color:rgba(179, 176, 176, 0.952);
-  height: 12vh;
+  height: 10vh;
   position: sticky;
   top: 0;
   color: rgb(64, 153, 153);
@@ -10,8 +10,19 @@ nav {
   align-items: center;
 }
 
+a {
+  text-decoration: none;
+}
+
+a :hover {
+  transition: 0.3s;
+  transform: scale(1.05);
+}
+
 h1 {
+  font-size: 2em;
   margin-left: 15px;
+  color: rgb(64, 153, 153);
   text-shadow: 2px 6px 6px hsl(0deg 0% 0% / 0.1);
 }
 

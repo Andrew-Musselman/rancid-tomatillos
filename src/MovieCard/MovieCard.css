@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-.movie-card > img {
+.movie-card-img {
   height: 40vh;
   width: 17vw;
   box-shadow: 10px 14px 14px rgba(46, 32, 32, 0.1);
@@ -14,7 +14,7 @@
 
 }
 
-.movie-card > img:hover {
+.movie-card-img:hover {
   transition: 0.3s;
   transform: scale(1.04);
 }

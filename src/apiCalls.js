@@ -1,14 +1,14 @@
 const apiPath = 'https://rancid-tomatillos.herokuapp.com/api/v2'
 
-const getAllMovies = () => {
-  return fetch(`${apiPath}/movies`)
+const getData = (path) => {
+  return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/${path}`)
   .then(response => handleResponse(response))
 }
 
-const getSingleMovie = (movieID) => {
-  return fetch(`${apiPath}/movies/${movieID}`)
-  .then(response => handleResponse(response))
-}
+// const getSingleMovie = (movieID) => {
+//   return fetch(`${apiPath}/movies/${movieID}`)
+//   .then(response => handleResponse(response))
+// }
 
 const handleResponse = (response) => {
   if(!response.ok) {
@@ -18,4 +18,4 @@ const handleResponse = (response) => {
   }
 }
 
-export { getAllMovies, getSingleMovie }
+export { getData };
