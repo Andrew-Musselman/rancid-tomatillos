@@ -5,10 +5,7 @@ import TopMovies from '../TopMovies/TopMovies'
 import Nav from '../Nav/Nav';
 import CurrentMovie from '../CurrentMovie/CurrentMovie';
 import { Route } from 'react-router-dom';
-import {
-  getAllMovies,
-  getSingleMovie
-} from '../apiCalls'
+import {getData} from '../apiCalls'
 
 
 class App extends Component {
@@ -22,7 +19,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    getAllMovies()
+    getData('/movies')
     .then(data => this.setState({movies: data.movies}))
     .catch(error => this.setState({error: error}))
   }
