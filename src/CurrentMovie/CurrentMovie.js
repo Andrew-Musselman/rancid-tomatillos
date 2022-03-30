@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './CurrentMovie.css';
 import {Link} from 'react-router-dom';
-import { getSingleMovie } from '../apiCalls';
+import {getData} from '../apiCalls';
 
 class CurrentMovie extends Component {
   constructor() {
@@ -13,8 +13,9 @@ class CurrentMovie extends Component {
   }
 
   componentDidMount() {
-    getSingleMovie(this.props.currentMovieId)
+    getData(`movies/${this.props.currentMovieId}`)
     .then(data => this.setState({currentMovie: data.movie, isLoading: false}))
+    .catch(err => console.log(err))
   }
 
   render() {
