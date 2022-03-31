@@ -23,6 +23,12 @@ const getSingleMovieData = () => {
 }
 
 describe('Movie Details', () => {
+  it('As a user, as the movie details are loading, I see the words loading', () => {
+    cy.intercept('GET', getSingleMovieData())
+    cy.visit('http://localhost:3000/694919')
+    .contains('h1', 'Loading...')
+  })
+
   it('As a user, I should be able to see a movie title', () => {
     cy.intercept('GET', getSingleMovieData())
     cy.visit('http://localhost:3000/694919')
@@ -41,7 +47,7 @@ describe('Movie Details', () => {
     .contains('p')
   })
 
-  it('As a user, I should be able to click the back button to return to the home page', () => {
+  it('As a user, I should be able see the back button to return to the home page', () => {
     cy.intercept('GET', getSingleMovieData())
     cy.visit('http://localhost:3000/694919')
     .get('button')
@@ -51,6 +57,15 @@ describe('Movie Details', () => {
     cy.intercept('GET', getSingleMovieData())
     cy.visit('http://localhost:3000/694919')
     .get('button')
+    .click()
+    .url().should('eq', 'http://localhost:3000/')
+  })
+
+  it('As a user, I should be able to click the page title to return to the home page', () => {
+    cy.intercept('GET', getSingleMovieData())
+    cy.visit('http://localhost:3000/694919')
+    .get('h1')
+    .first()
     .click()
     .url().should('eq', 'http://localhost:3000/')
   })
