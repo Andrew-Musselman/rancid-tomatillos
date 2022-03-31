@@ -26,6 +26,7 @@ class CurrentMovie extends Component {
   render() {
     return (
       <section className='current-movie-page'>
+      {this.state.error && <h2>{this.state.error.message}</h2>}
       {this.state.isLoading ? <h1>Loading...</h1> :
         <article className='current-movie-details' >
           <div className='current-movie-image' style={{ backgroundImage: `linear-gradient(rgb(255 255 255 / 0%), rgb(179 176 176)), url(${this.state.currentMovie.backdrop_path})` }}>
