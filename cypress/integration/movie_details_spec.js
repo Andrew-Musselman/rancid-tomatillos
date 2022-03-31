@@ -70,4 +70,13 @@ describe('Movie Details', () => {
     .url().should('eq', 'http://localhost:3000/')
   })
 
+  it('As a user, I should see an error message if the server is down', () => {
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {    
+    statusCode: 500,
+    ok: false,
+    })
+    cy.visit('http://localhost:3000/694919')
+      .contains('Something went wrong!');
+  })
+
 })
