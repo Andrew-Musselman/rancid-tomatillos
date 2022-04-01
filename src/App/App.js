@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import './App.css';
 import AllMovies from '../AllMovies/AllMovies';
-import TopMovies from '../TopMovies/TopMovies'
 import Nav from '../Nav/Nav';
 import CurrentMovie from '../CurrentMovie/CurrentMovie';
+import MovieCarousel from '../MovieCarousel/MovieCarousel';
 import { Route } from 'react-router-dom';
 import {getData} from '../apiCalls'
 
@@ -36,7 +36,7 @@ class App extends Component {
         <Route exact path='/' render={() => {
           return (
             <div>
-              <TopMovies movies={this.state.movies} />
+              <MovieCarousel movies={this.state.movies}/>
               <AllMovies movies={this.state.movies} />
             </div>
         )}}/>

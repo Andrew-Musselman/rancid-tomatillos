@@ -1,0 +1,25 @@
+.top-movie-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-movie-card-img {
+  height: 50vh;
+  width: 100%;
+  box-shadow: 10px 14px 14px rgba(46, 32, 32, 0.1);
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.top-movie-card-img:hover {
+  transition: 0.3s;
+  transform: scale(1.04);
+}
+
+.top-movie-card > p {
+  color: rgb(64, 153, 153);
+  font-weight:bold;
+  padding-top: 1.3vh;
+}
