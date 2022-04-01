@@ -38,7 +38,7 @@ class CurrentMovie extends Component {
             <h3>{this.state.currentMovie.tagline}</h3>
             <p><b>Released:</b> {`${this.convertDate(this.state.currentMovie.release_date)}`} | <b> Run Time: </b> {`${this.state.currentMovie.runtime} minutes`}</p>
             <p>{this.state.currentMovie.overview}</p>
-            <p>{this.state.currentMovie.genre}</p>
+            <p>{this.state.currentMovie.genres}</p>
             <p><b>Average Rating:</b> {`${parseFloat(this.state.currentMovie.average_rating).toFixed(2)}`}</p>
             <p><b>Budget:</b> {`${this.state.currentMovie.budget}`} | <b> Box Office: </b>{`${this.state.currentMovie.revenue}`}</p>
             <Link to='/'><button>Back</button></Link>
