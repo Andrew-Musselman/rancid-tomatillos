@@ -14,15 +14,41 @@ class App extends Component {
     this.state = {
       movies: [],
       currentMovie: null,
-      error: null
+      filteredMovies: [],
+      error: null,
+      isLoading: true
     }
   }
 
   componentDidMount() {
     getData('/movies')
-    .then(data => this.setState({movies: data.movies}))
+    .then(data => console.log(data.movies))
+    .then(data => this.getGenres(data.movies))
     .catch(error => this.setState({error: error}))
   }
+
+  getGenres = async (movies) => {
+    
+    const moviesMapped = []
+    for(const movie of movies) { 
+      const singleMovie = await getData(`movies/${movie.id}`)
+      movie.genres = singleMovie.movie.genres
+      moviesMapped.push(movie)
+    }
+    this.setState({movies: moviesMapped, filteredMovies: moviesMapped, isLoading: false})
+  }
+
+  filterGenre = (genre) => {
+    if(genre === 'All') {
+      this.setState({filteredMovies: this.state.movies})
+      return
+    }
+
+    const filteredMovies = this.state.movies.filter(movie => movie.genre.includes(genre))
+    this.setState({filteredMovies: filteredMovies})
+  }
+
+
 
   render() {
     return (
