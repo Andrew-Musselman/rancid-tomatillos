@@ -8,6 +8,8 @@ nav {
   color: rgb(64, 153, 153);
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  padding-right: 30px;
 }
 
 a {
