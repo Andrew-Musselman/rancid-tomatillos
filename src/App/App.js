@@ -6,6 +6,7 @@ import CurrentMovie from '../CurrentMovie/CurrentMovie';
 import MovieCarousel from '../MovieCarousel/MovieCarousel';
 import { Route } from 'react-router-dom';
 import {getData} from '../apiCalls'
+import FilteredMovies from '../FilteredMovies/FilteredMovies';
 
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
       movies: [],
       currentMovie: null,
       filteredMovies: [],
+      selectedGenre: null,
       error: null,
       isLoading: true
     }
@@ -22,15 +24,14 @@ class App extends Component {
 
   componentDidMount() {
     getData('/movies')
-    .then(data => console.log(data.movies))
-    .then(data => this.getGenres(data.movies))
+    .then(data => this.getGenres(data))
     .catch(error => this.setState({error: error}))
+    
   }
 
   getGenres = async (movies) => {
-    
     const moviesMapped = []
-    for(const movie of movies) { 
+    for(const movie of movies.movies) { 
       const singleMovie = await getData(`movies/${movie.id}`)
       movie.genres = singleMovie.movie.genres
       moviesMapped.push(movie)
@@ -40,12 +41,12 @@ class App extends Component {
 
   filterGenre = (genre) => {
     if(genre === 'All') {
-      this.setState({filteredMovies: this.state.movies})
+      this.setState({filteredMovies: this.state.movies, selectedGenre: null})
       return
     }
 
-    const filteredMovies = this.state.movies.filter(movie => movie.genre.includes(genre))
-    this.setState({filteredMovies: filteredMovies})
+    const filteredMovies = this.state.movies.filter(movie => movie.genres.includes(genre))
+    this.setState({filteredMovies: filteredMovies, selectedGenre: genre})
   }
 
 
@@ -54,16 +55,17 @@ class App extends Component {
     return (
       <div>
         <div>
-        <Nav />
+        <Nav filterGenre={this.filterGenre}/>
         {this.state.error && <h2>{this.state.error.message}</h2>}
         </div>
-
+        {this.state.isLoading && <h2>Content Loading...</h2>}
         <main className='App'>
         <Route exact path='/' render={() => {
           return (
             <div>
               <MovieCarousel movies={this.state.movies}/>
-              <AllMovies movies={this.state.movies} />
+              {this.state.selectedGenre ? <FilteredMovies genre={this.state.selectedGenre} filteredMovies={this.state.filteredMovies}/> :
+              <AllMovies movies={this.state.movies} />}
             </div>
         )}}/>
         <Route exact path='/:movieId' render={({match}) => {
