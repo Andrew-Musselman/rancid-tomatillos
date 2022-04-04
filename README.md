@@ -12,13 +12,13 @@ This was a paired [project](https://frontend.turing.edu/projects/module-3/rancid
 - At any time, the user can click the page title to return to the homepage
 
 Home page and movie details:
-![view home page](https://media.giphy.com/media/JYELG7WihLCijgZMPQ/giphy-downsized-large.gif)
+![](https://media.giphy.com/media/JYELG7WihLCijgZMPQ/giphy-downsized-large.gif)
 
 Filtering by genre:
-![genre](https://media.giphy.com/media/areseVhsZoh4pLjgJU/giphy-downsized-large.gif)
+![](https://media.giphy.com/media/areseVhsZoh4pLjgJU/giphy-downsized-large.gif)
 
 Loading wheel to enhance user experience:
-![loading](https://media.giphy.com/media/JSOQgpVxofFxv911FE/giphy.gif)
+![](https://media.giphy.com/media/JSOQgpVxofFxv911FE/giphy.gif)
 
 
 ---------
