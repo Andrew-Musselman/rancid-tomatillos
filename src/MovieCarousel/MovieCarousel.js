@@ -1,7 +1,7 @@
-import React, {Component} from 'react';
-import './MovieCarousel.css'
+import React from 'react';
 import TopMovieCard from '../TopMovieCard/TopMovieCard';
-let colors = ["#0088FE", "#00C49F", "#FFBB28"];
+import './MovieCarousel.css'
+
 
 const MovieCarousel = ({movies, getMovieDetails}) => {
   const [index, setIndex] = React.useState(0);
@@ -34,17 +34,7 @@ const MovieCarousel = ({movies, getMovieDetails}) => {
     return () => {
       resetTimeout()
     }
-  }, [index])
-  // componentDidMount() {
-  //   // this.setState({index: 0})
-  //   setTimeout(() => this.setState({index:1}), 500)
-  //   setTimeout(() => this.setState({index:2}), 500)
-  // }
-  // componentDidUpdate() {
-  //   // this.setState({index: 0})
-  //   setTimeout(() => this.setState({index:1}), 500)
-  //   setTimeout(() => this.setState({index:2}), 500)
-  // }
+  }, [index, topMovieCards])
 
     return (
       <div className='top-movies'>
@@ -60,7 +50,6 @@ const MovieCarousel = ({movies, getMovieDetails}) => {
               <div key={idx} className={`slide-show-dot${index === idx ? ' active' : ''}`} onClick={() => {
                 setIndex(idx)
               }}>
-
               </div>
             ))}
           </div>

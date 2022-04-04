@@ -6,11 +6,9 @@
 }
 
 .movie-card-img {
-  
   box-shadow: 10px 14px 14px rgba(46, 32, 32, 0.1);
   cursor: pointer;
   border-radius: 3px;
-
 }
 
 .movie-card-img:hover {
