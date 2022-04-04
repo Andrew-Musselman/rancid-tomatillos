@@ -47,6 +47,7 @@ Loading wheel to enhance user experience:
 ### Contributors
 
 Andrew Musselman | [GitHub](https://github.com/Andrew-Musselman)
+
 Jessica Fatta | [GitHub](https://github.com/JessFatta)
 
 --------
