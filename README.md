@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# Rancid Tomatillos
+-------
+### Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Rancid Tomatillos is an interactive webpage that allows users to browse a collection of many popular movies. Our application also has features that allows the user to view all top rated movies as well as browse by genre in order to help them decide what to watch. Further, the user is also able to click each movie to see more details including the movie's tagline, overview, rating, release date, genre(s), and runtime as well as budget and box office figures.
 
-## Available Scripts
+This was a paired [project](https://frontend.turing.edu/projects/module-3/rancid-tomatillos-v3.html) and is built using React, React Router, JavaScript, CSS, and utilizes Test Driven Developement and End-to-End testing with Cypress.
 
-In the project directory, you can run:
+- The user can visit the home page to view both top rated movies and all movies all at once
+- The user can also use the dropdown menu and select a specific genre which will display all movies of that genre
+- The user can select a movie which will take them to a new page that displays the movie's details
+- At any time, the user can click the page title to return to the homepage
 
-### `npm start`
+Home page and movie details:
+![view home page](https://media.giphy.com/media/JYELG7WihLCijgZMPQ/giphy-downsized-large.gif)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Filtering by genre:
+![genre](https://media.giphy.com/media/areseVhsZoh4pLjgJU/giphy-downsized-large.gif)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Loading wheel to enhance user experience:
+![loading](https://media.giphy.com/media/JSOQgpVxofFxv911FE/giphy.gif)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---------
+### Installation Instructions
+ - Fork and Clone [this](https://github.com/Andrew-Musselman/rancid-tomatillos) repository
+ - `CD` into the directory
+ - Run `npm install` 
+ - Run `npm start`
+ - In your browser, go to [this link](http://localhost:3000/)
 
-### `npm run build`
+-----------
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Future Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+ - Add functionality to search by movie title
+ - Add functionality to allow users to log in and add reviews/comments on each movie
+ - Add functionality to include a trailer preview for each movie
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---------
 
-### `npm run eject`
+### Contributors
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Andrew Musselman | [GitHub](https://github.com/Andrew-Musselman)
+Jessica Fatta | [GitHub](https://github.com/JessFatta)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+--------
+### Links
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Repository Link: [🍅 ](https://github.com/Andrew-Musselman/rancid-tomatillos)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+------------
+### Technologies Used
+ This application was built using React, React Router, JavaScript, and CSS and utilizes Test Driven Development and End-to-End testing with Cypress.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+------------
+### Learning Goals
+To solidify and demonstrate the understanding of:
+- Building an application using React
+- Create a multi-page application with React Router that changes the URL for a better user experience
+- Cypress and End-to-End testing
+- Responsive design to format on all devices
