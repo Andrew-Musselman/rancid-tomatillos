@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import './FilterForm.css'
 
 
 const FilterForm = ({filterGenre}) => {
@@ -12,7 +13,7 @@ const FilterForm = ({filterGenre}) => {
   return (
   
     <div className="genre-filter">
-        <label className="filter-label" name="genre">Choose a genre:</label><br></br>
+        <label className="filter-label" name="genre"><b>Browse By Genre</b></label><br></br>
           <select className="genre" name="genre" onChange={({target: {value}}) => handleChange(value)}>
             <option value="All">All</option>
             <option value="Action">Action</option>
