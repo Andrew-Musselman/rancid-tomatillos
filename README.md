@@ -13,7 +13,7 @@ This was a paired [project](https://frontend.turing.edu/projects/module-3/rancid
 
 Home page and movie details:
 
-![](https://media.giphy.com/media/JYELG7WihLCijgZMPQ/giphy-downsized-large.gif)
+![](https://media.giphy.com/media/eEwyL1q6EWafm5i3iK/giphy-downsized-large.gif)
 
 
 Filtering by genre:
