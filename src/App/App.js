@@ -1,13 +1,13 @@
-import React, {Component} from 'react';
-import './App.css';
+import React, { Component } from 'react';
 import AllMovies from '../AllMovies/AllMovies';
 import Nav from '../Nav/Nav';
 import CurrentMovie from '../CurrentMovie/CurrentMovie';
 import MovieCarousel from '../MovieCarousel/MovieCarousel';
 import { Route } from 'react-router-dom';
-import {getData} from '../apiCalls'
 import FilteredMovies from '../FilteredMovies/FilteredMovies';
-import loading from '../loading.gif'
+import { getData } from '../apiCalls';
+import loading from '../loading.gif';
+import './App.css';
 
 
 class App extends Component {
@@ -27,7 +27,6 @@ class App extends Component {
     getData('movies')
     .then(data => this.getGenres(data))
     .catch(error => this.setState({error: error}))
-
   }
 
   getGenres = async (movies) => {
@@ -50,29 +49,28 @@ class App extends Component {
     this.setState({filteredMovies: filteredMovies, selectedGenre: genre})
   }
 
-
-
   render() {
     return (
       <div>
         <div>
-        <Nav filterGenre={this.filterGenre}/>
+        <Nav filterGenre={this.filterGenre} />
         {this.state.error && <h2>{this.state.error.message}</h2>}
         </div>
-        {this.state.isLoading && <img className='loading-gif' src={loading}/>}
         <main className='App'>
         <Route exact path='/' render={() => {
           return (
             <div>
-              <MovieCarousel movies={this.state.movies}/>
-              {this.state.selectedGenre ? <FilteredMovies genre={this.state.selectedGenre} filteredMovies={this.state.filteredMovies}/> :
+            {this.state.isLoading && <img className='loading-gif' src={loading} alt='loading wheel' />}
+              <MovieCarousel movies={this.state.movies} />
+              {this.state.selectedGenre ?
+              <FilteredMovies genre={this.state.selectedGenre} filteredMovies={this.state.filteredMovies} /> :
               <AllMovies movies={this.state.movies} />}
             </div>
-        )}}/>
+        )}} />
         <Route exact path='/:movieId' render={({match}) => {
           let id= parseInt(match.params.movieId)
           return <CurrentMovie currentMovieId={id} />
-        }}/>
+        }} />
         </main>
       </div>
     )
