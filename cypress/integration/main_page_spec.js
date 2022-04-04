@@ -39,8 +39,6 @@ const getSingleMovieData = () => {
   }
 }
 
-
-
 describe('Main', () => {
   it('As a user, I should be able to visit the page and see a title', () => {
     cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies', getAllMovieData())
@@ -93,7 +91,7 @@ describe('Main', () => {
       .click()
       .url().should('eq', 'http://localhost:3000/694919')
   })
-  
+
   it('As a user, I should be able to select a genre from the drop down and see movies from that genre', () => {
     cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies', getAllMovieData())
     cy.visit('http://localhost:3000')
