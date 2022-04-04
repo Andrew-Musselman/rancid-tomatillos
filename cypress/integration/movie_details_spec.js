@@ -3,7 +3,7 @@ const getSingleMovieData = () => {
     statusCode: 200,
     ok: true,
       body: {
-        movies: [{
+        movie: [{
           title: 'Money Plane',
           poster_path: 'https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg',
           backdrop_path: 'https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg',
@@ -22,39 +22,62 @@ const getSingleMovieData = () => {
   }
 }
 
+const getAllMovieData = () => {
+  return {
+    statusCode: 200,
+      ok: true,
+      body: {
+        movies: [{
+          id: 694919,
+          poster_path: "https://image.tmdb.org/t/p/original//6CoRTJTmijhBLJTUNoVSUNxZMEI.jpg",
+          backdrop_path: "https://image.tmdb.org/t/p/original//pq0JSpwyT2URytdFG0euztQPAyR.jpg",
+          title: "Money Plane",
+          average_rating: 6.625,
+          release_date: "2020-09-29"
+        }]
+      }
+  }
+}
+
 describe('Movie Details', () => {
-  it('As a user, as the movie details are loading, I see the words loading', () => {
-    cy.intercept('GET', getSingleMovieData())
+  it('As a user, as the movie details are loading, I see the loading icon', () => {
+    cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies', getAllMovieData())
+    cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', getSingleMovieData())
     cy.visit('http://localhost:3000/694919')
-    .contains('h1', 'Loading...')
+    .get('img')
   })
 
   it('As a user, I should be able to see a movie title', () => {
-    cy.intercept('GET', getSingleMovieData())
+    cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies', getAllMovieData())
     cy.visit('http://localhost:3000/694919')
-    .contains('h2', 'Money Plane')
+    .get('div[class="current-movie-text"]')
+      .contains('h2', 'Money Plane')
   })
 
   it('As a user, I should be able to see a movie image', () => {
-    cy.intercept('GET', getSingleMovieData())
+    cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies', getAllMovieData())
+    cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', getSingleMovieData())
     cy.visit('http://localhost:3000/694919')
     .get('img')
   })
 
   it('As a user, I should be able to see movie details', () => {
-    cy.intercept('GET', getSingleMovieData())
+    cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies', getAllMovieData())
+    cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', getSingleMovieData())
     cy.visit('http://localhost:3000/694919')
     .contains('p')
   })
 
   it('As a user, I should be able see the back button to return to the home page', () => {
-    cy.intercept('GET', getSingleMovieData())
+    cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies', getAllMovieData())
+    cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', getSingleMovieData())
     cy.visit('http://localhost:3000/694919')
     .get('button')
   })
 
   it('As a user, I should be able to click the back button to return to the home page', () => {
-    cy.intercept('GET', getSingleMovieData())
+    cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies', getAllMovieData())
+    cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', getSingleMovieData())
     cy.visit('http://localhost:3000/694919')
     .get('button')
     .click()
@@ -62,7 +85,8 @@ describe('Movie Details', () => {
   })
 
   it('As a user, I should be able to click the page title to return to the home page', () => {
-    cy.intercept('GET', getSingleMovieData())
+    cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies', getAllMovieData())
+    cy.intercept('GET','https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', getSingleMovieData())
     cy.visit('http://localhost:3000/694919')
     .get('h1')
     .first()
@@ -71,7 +95,7 @@ describe('Movie Details', () => {
   })
 
   it('As a user, I should see an error message if the server is down', () => {
-    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {    
+    cy.intercept('GET', 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/694919', {
     statusCode: 500,
     ok: false,
     })

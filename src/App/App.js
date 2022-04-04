@@ -24,15 +24,15 @@ class App extends Component {
   }
 
   componentDidMount() {
-    getData('/movies')
+    getData('movies')
     .then(data => this.getGenres(data))
     .catch(error => this.setState({error: error}))
-    
+
   }
 
   getGenres = async (movies) => {
     const moviesMapped = []
-    for(const movie of movies.movies) { 
+    for(const movie of movies.movies) {
       const singleMovie = await getData(`movies/${movie.id}`)
       movie.genres = singleMovie.movie.genres
       moviesMapped.push(movie)
@@ -77,7 +77,7 @@ class App extends Component {
       </div>
     )
   }
-  
+
 }
 
 export default App;
