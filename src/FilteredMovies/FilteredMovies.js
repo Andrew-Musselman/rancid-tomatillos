@@ -16,13 +16,13 @@ const FilteredMovies = ({filteredMovies, genre, getMovieDetails}) => {
 
   return (
     <div className='all-movie-wrapper'>
-    <h2>{genre}</h2>
-    <div className='all-movie-container'>
-      {filteredMovieCards}
+      <h2>{genre}</h2>
+      <div className='all-movie-container'>
+        {filteredMovieCards}
+      </div>
     </div>
-  </div>
   )
 }
 
 
-export default FilteredMovies
+export default FilteredMovies;
