@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './CurrentMovie.css';
 import {Link} from 'react-router-dom';
 import {getData} from '../apiCalls';
+import loading from '../loading.gif';
 
 class CurrentMovie extends Component {
   constructor() {
@@ -29,7 +30,7 @@ class CurrentMovie extends Component {
     } else {
     return (
       <section className='current-movie-page'>
-      {this.state.isLoading ? <h1>Loading...</h1> :
+      {this.state.isLoading ? <img className='loading-gif' src={loading}/> :
         <article className='current-movie-details' >
           <div className='current-movie-image' style={{ backgroundImage: `linear-gradient(rgb(255 255 255 / 0%), rgb(179 176 176)), url(${this.state.currentMovie.backdrop_path})` }}>
           </div>
