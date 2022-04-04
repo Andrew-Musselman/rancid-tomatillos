@@ -1,9 +1,11 @@
 .slide-show {
-  margin: 0 auto;
-  overflow: hidden;
-  width: 1000px;
-  max-width: 1000px;
-
+    margin: 0 auto;
+    overflow: hidden;
+    width: 80%;
+    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .slide-show-slider {
