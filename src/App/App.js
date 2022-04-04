@@ -7,6 +7,7 @@ import MovieCarousel from '../MovieCarousel/MovieCarousel';
 import { Route } from 'react-router-dom';
 import {getData} from '../apiCalls'
 import FilteredMovies from '../FilteredMovies/FilteredMovies';
+import loading from '../loading.gif'
 
 
 class App extends Component {
@@ -58,7 +59,7 @@ class App extends Component {
         <Nav filterGenre={this.filterGenre}/>
         {this.state.error && <h2>{this.state.error.message}</h2>}
         </div>
-        {this.state.isLoading && <h2>Content Loading...</h2>}
+        {this.state.isLoading && <img className='loading-gif' src={loading}/>}
         <main className='App'>
         <Route exact path='/' render={() => {
           return (
@@ -76,7 +77,7 @@ class App extends Component {
       </div>
     )
   }
-
+  
 }
 
 export default App;
