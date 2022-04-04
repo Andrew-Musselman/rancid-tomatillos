@@ -1,9 +1,7 @@
 .all-movie-container {
   padding: 20px;
   padding: 20px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 20px;
+  
 }
 
 .all-movie-wrapper {
@@ -21,4 +19,3 @@
 .all-movie-wrapper > img {
   box-shadow: 2px 6px 6px hsl(0deg 0% 0% / 0.1);
 }
-
